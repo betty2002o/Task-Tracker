@@ -2,7 +2,9 @@ import React from "react";
 import "./TaskColumn.css";
 import TaskCard from "./TaskCard";
 
-const TaskColumn = ({ title, icon }) => {
+const TaskColumn = ({ title, icon, tasks, status }) => {
+  const filteredList = tasks.map((x) => x.status === status);
+  console.log("stats", { status }, filteredList);
   return (
     <section className="task_column">
       <h2 className="task_column_heading">
