@@ -1,7 +1,7 @@
 import React from "react";
 import "./Tag.css";
 
-const Tag = ({ tagName, selectTag, isTagSelected }) => {
+const Tag = ({ tagName, selectTag, isTagSelected, clickable }) => {
   const tagBackgroundColor = {
     HTML: { backgroundColor: "#fda821" },
     CSS: { backgroundColor: "#15d4c8" },
@@ -13,7 +13,7 @@ const Tag = ({ tagName, selectTag, isTagSelected }) => {
     <button
       type="button"
       className="tag"
-      onClick={() => selectTag(tagName)}
+      onClick={() => (clickable ? selectTag(tagName) : undefined)}
       style={
         isTagSelected ? tagBackgroundColor[tagName] : tagBackgroundColor.default
       }

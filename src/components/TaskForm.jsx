@@ -60,16 +60,19 @@ const TaskForm = ({ setTasks }) => {
               tagName="HTML"
               selectTag={selectTag}
               isTagSelected={isTagSelected("HTML")}
+              clickable
             />
             <Tag
               tagName="CSS"
               selectTag={selectTag}
               isTagSelected={isTagSelected("CSS")}
+              clickable
             />
             <Tag
               tagName="JavaScript"
               selectTag={selectTag}
               isTagSelected={isTagSelected("JavaScript")}
+              clickable
             />
             <Tag
               tagName="React"

@@ -4,16 +4,20 @@ import TaskColumn from "./components/TaskColumn";
 import todoIcon from "./assets/direct-hit.png";
 import doingIcon from "./assets/glowing-star.png";
 import doneIcon from "./assets/check-mark-button.png";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+const oldTasks = localStorage.getItem("tasks");
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(JSON.parse(oldTasks) || []);
+
   const handleDelete = (taskIndex) => {
-    console.log(taskIndex);
     const filteredTask = tasks.filter((x, index) => index !== taskIndex);
-    console.log("filtered", filteredTask);
     setTasks(filteredTask);
   };
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <div className="app">
