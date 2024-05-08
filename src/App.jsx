@@ -8,20 +8,38 @@ import React, { useState } from "react";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  console.log(" tasks", tasks);
+  const handleDelete = (taskIndex) => {
+    console.log(taskIndex);
+    const filteredTask = tasks.filter((x, index) => index !== taskIndex);
+    console.log("filtered", filteredTask);
+    setTasks(filteredTask);
+  };
 
   return (
     <div className="app">
       <TaskForm setTasks={setTasks} />
       <main className="app_main">
-        <TaskColumn title="To Do" icon={todoIcon} status="todo" tasks={tasks} />
+        <TaskColumn
+          title="To Do"
+          icon={todoIcon}
+          status="todo"
+          tasks={tasks}
+          handleDelete={handleDelete}
+        />
         <TaskColumn
           title="Doing"
           icon={doingIcon}
           status="doing"
           tasks={tasks}
+          handleDelete={handleDelete}
         />
-        <TaskColumn title="Done" icon={doneIcon} status="done" tasks={tasks} />
+        <TaskColumn
+          title="Done"
+          icon={doneIcon}
+          status="done"
+          tasks={tasks}
+          handleDelete={handleDelete}
+        />
       </main>
     </div>
   );
