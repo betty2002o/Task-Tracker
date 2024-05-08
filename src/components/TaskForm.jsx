@@ -78,6 +78,7 @@ const TaskForm = ({ setTasks }) => {
               tagName="React"
               selectTag={selectTag}
               isTagSelected={isTagSelected("React")}
+              clickable
             />
           </div>
           <div>
