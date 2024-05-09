@@ -8,3 +8,16 @@
   width: 30px;
   margin-right: 5px;
 }
+
+@media only screen and (min-width: 992px) {
+  .task_column_heading {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+
+  .task_column_icon {
+    width: 30px;
+    margin-right: 5px;
+  }
+}

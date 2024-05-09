@@ -1,15 +1,43 @@
 .app {
   display: grid;
   grid-template-rows: 150px auto;
+  /* justify-content: center; */
 }
 
 .app_main {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   padding: 20px 8%;
 }
 
 .task_column {
-  width: 33.33%;
   margin: 20px;
 }
+
+@media only screen and (min-width: 992px) {
+  .app {
+    display: grid;
+    grid-template-rows: 150px auto;
+  }
+
+  .app_main {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+
+    padding: 20px 8%;
+  }
+
+  .task_column {
+    width: 33.33%;
+    margin: 20px;
+  }
+}
+/* 
+Medium devices (desktops):
+@media (min-width: 768px) { ... }
+Large devices (desktops):
+@media (min-width: 992px) { ... }
+Extra large devices (large desktops, TVs):
+@media (min-width: 1200px) { ... } */
